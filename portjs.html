@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <h2 class="logo">PORTFO<span>LIO</span></h2>
+            <a href="#" class="#"></a>
+        </nav>
+        <div class="content">
+            <h4>Hello, I'm</h4>
+            <h1>James<span>Quarshie</span></h1>
+            <h3>A PROGRAMMER</h3>
+            <div class="updates">
+                <form>
+                    <input type="email" name="email" id="mail" placeholder="Enter your email">
+                    <input type="submit" name="submit" value="Let's get started">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section class="about">
+        <div class="main">
+            <div class="slideshow">
+            <img src="jayMe2.png" height="500" width="250" alt="1">
+            <img src="jay1.jpg" height="500" width="250" alt="2">
+            </div>
+            <div class="about-text">
+                <h2>
+                    About Me
+                </h2>
+                <h5>
+                    DEV & <span>DESIGN</span>
+                </h5>
+                <p>
+                   I'm a full stack web developer. I am able to use web animations to make websites more and more interactive. As a software developer, I can create any software of your choice. Also, with my cyber security skills, I can protect computer networks from cyberattacks and unauthorized access.
+                </p>
+                <button type="button">Let's Talk</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="service">
+        <div class="title">
+            <h2>My<span>Services</span></h2>
+        </div>
+
+        <div class="box">
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h5>Web Development</h5>
+                <div class="pra">
+                    <p>
+                        "Web design is not just about creating pretty layouts. It's about understanding the marketing challenge behind your business."
+                    </p>
+                    <p>
+                        <a href="#" class="button">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h5>Software Developer</h5>
+                <div class="pra">
+                    <p>
+                        "Experienced software developer with a passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success."
+                    </p>
+                    <p>
+                        <a href="#" class="button">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h5>Cyber Security</h5>
+                <div class="pra">
+                    <p>
+                        "The more devices to which we are connected, the more vulnerable we are. Think it's ridiculous that a vacuuming robot could spy on you, or a refrigerator could deny its owner entry? Think again."
+                    </p>
+                    <p>
+                        <a href="#" class="button">Read More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-me">
+        <div class="box">
+            <div class="contact-info">
+                <h2>Contact Me</h2>
+                <h5>Let's create something amazing together</h5>
+                <h5>Jamquar@gmail.com</h5>
+                <div class="social">
+                    <a href=https://instagram.com/quarshie_jay?igshid=NGExMmI2YTkyZg==><i class="fab fa-instagram"></i></a>
+                    <a href=https://www.linkedin.com/in/james-quarshie-b8757823a/><i class="fab fa-linkedin"></i> </a>
+                    <a href=https://twitter.com/Quarshie_Kvng><i class="fab fa-twitter"></i> </a>
+                    <a href=https://wa.me/qr/FVXLP7AXYROBB1><i class="fab fa-whatsapp"></i> </a>
+
+
+                    
+                </div>
+                <a href="#" class="btn">Get in Touch</a>
+                <p class="end">CopyRight By James Quarshie</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling effect
+        window.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('nav ul li a');
+
+            links.forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+
+                    const targetId = e.target.getAttribute('href').slice(1);
+                    const targetElement = document.getElementById(targetId);
+                    const offsetTop = targetElement.offsetTop;
+
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+
+            });
+             const getInTouchButton = document.querySelector('.contact-me .box .contact-info .btn');
+
+            getInTouchButton.addEventListener('click', () => {
+                const phoneNumber = '+233-57-591-4191'; // Replace with your desired telephone number
+                alert(`Contact me at ${phoneNumber}`);
+
+        
+            });
+
+            const slideshow = document.querySelector('.slideshow');
+        const images = slideshow.getElementsByTagName('img');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            for (let i = 0; i < images.length; i++) {
+                images[i].classList.remove('active');
+            }
+            images[index].classList.add('active');
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        // Initial image display
+        showImage(currentIndex);
+
+        // Switch to the next image every 3 seconds
+        setInterval(nextImage, 3000);
+            
+
+
+        });
+
+        
+    </script>
+
+</body>
+</html>

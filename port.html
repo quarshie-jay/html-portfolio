@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background-image: url(../portfolio/img/bg.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 45px;
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+
+        .logo {
+            color: black;
+            font-size: 35px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        span {
+            color: #f9004d;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 10px 25px 10px 10px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        nav ul li a:hover {
+            color: #f9004d;
+            transition: .4s;
+        }
+        
+        @media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .content {
+    position: static;
+    text-align: center;
+    transform: none;
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 45px;
+    margin: 10px 0;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .updates form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-right: 15px;
+  }
+
+  .updates form input:first-child {
+    padding: 14px 80px 14px 15px;
+  }
+}
+
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            color: black;
+            margin: 28px 8px 20px;
+            font-size: 75px;
+        }
+
+        h3 {
+            color: black;
+            font-size: 25px;
+            margin-bottom: 50px;
+        }
+
+        h4 {
+            color: #f9004d;
+            letter-spacing: 2px;
+            font-size: 20px;
+        }
+
+        .updates form {
+            width: 380px;
+            max-width: 100%;
+            position: relative;
+        }
+
+        .updates form input:first-child {
+            display: inline-block;
+            width: 100%;
+            padding: 14px 130px 14px 15px;
+            border: 2px solid #f9004d;
+            outline: none;
+            border-radius: 30px;
+        }
+
+        .updates form input:last-child {
+            position: absolute;
+            display: inline-block;
+            outline: none;
+            border: none;
+            padding: 10px 10px;
+            border-radius: 30px;
+            background-color: #f9004d;
+            color: white;
+            box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+            cursor: pointer;
+            top: 6px;
+            right: 6px;
+        }
+
+        .about {
+            width: 100%;
+            padding: 100px 0px;
+            background-color: black;
+        }
+
+        .about img {
+            height: auto;
+            width: 430px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .main {
+            width: 100%;
+            max-width: 1130px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            color: white;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .main .img {
+            height: 500px;
+        }
+
+        .about-text h2 {
+            color: #f9004d;
+            font-size: 75px;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+
+        .about-text h5 {
+            color: whitesmoke;
+            letter-spacing: 2px;
+            font-size: 22px;
+            margin-bottom: 25px;
+            text-transform: capitalize;
+        }
+
+        .about-text p {
+            color: rgba(217, 201, 217, 0.8);
+            letter-spacing: 1px;
+            line-height: 28px;
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+
+        button {
+            background-color: #f9004d;
+            color: white;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 13px 30px;
+            border-radius: 30px;
+            transition: .4s;
+        }
+
+        button:hover {
+            background-color: transparent;
+            border: 2px solid #f9004d;
+            cursor: pointer;
+        }
+
+        .service {
+            background: #101010;
+            width: 100%;
+            padding: 100px 0px;
+        }
+
+        .title h2 {
+            color: white;
+            font-size: 75px;
+            width: 30px auto;
+            text-align: center;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .card {
+            height: 400px;
+            width: 400px;
+            padding: 20px 35px;
+            background: #191919;
+            border-radius: 20px;
+            margin: 15px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card i {
+            font-size: 50px;
+            display: block;
+            text-align: center;
+            margin: 25px 0px;
+            color: #f9004d;
+        }
+
+        h5 {
+            color: white;
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .pra p {
+            color: #fcfc;
+            font-size: 16px;
+            line-height: 27px;
+            margin-bottom: 25px;
+        }
+
+        .card .button {
+            background-color: #f9004d;
+            color: white;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 9px 22px;
+            border-radius: 30px;
+            transition: .4s;
+        }
+
+        .card .button:hover {
+            background-color: transparent;
+            border: 2px solid #f9004d;
+            cursor: pointer;
+        }
+
+        .contact-me {
+            width: 100%;
+            height: 290px;
+            background: #191919;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-me .box {
+            display: flex;
+            justify-content: center;
+           align-items: center;
+            height: 100%;
+        }
+
+        .contact-me .box .contact-info {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .contact-me .box .contact-info h2 {
+            font-size: 50px;
+            color: white;
+        }
+
+        .contact-me .box .contact-info h5 {
+            font-size: 18px;
+            color: #f9004d;
+            margin-bottom: 20px;
+        }
+
+        .contact-me .box .contact-info .social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-me .box .contact-info .social a {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 30px;
+            color: #f9004d;
+            transition: .4s;
+        }
+
+        .contact-me .box .contact-info .social a:hover {
+            color: white;
+            transform: scale(1.2);
+        }
+
+        .contact-me .box .contact-info .btn {
+            background-color: #f9004d;
+            color: white;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: .4s;
+            font-size: 18px;
+        }
+
+        .contact-me .box .contact-info .btn:hover {
+            background-color: transparent;
+            border: 2px solid #f9004d;
+            color: #f9004d;
+        }
+
+        .contact-me .box .contact-info .end {
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .box {
+                flex-direction: column;
+            }
+
+            .card {
+                margin-bottom: 30px;
+            }
+
+            nav {
+                padding: 0;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            nav ul li {
+                display: block;
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            .content {
+                position: static;
+                text-align: center;
+                transform: none;
+            }
+
+            h1 {
+                font-size: 45px;
+                margin: 10px 0;
+            }
+
+            h3 {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .updates form {
+                width: 300px;
+                max-width: 100%;
+                margin: 0 auto;
+                padding-right: 15px;
+            }
+
+            .updates form input:first-child {
+                padding: 14px 80px 14px 15px;
+            }
+
+            .about {
+                padding: 50px 0;
+            }
+
+            .about img {
+                width: 300px;
+                margin-bottom: 30px;
+            }
+
+            .about-text h2 {
+                font-size: 45px;
+            }
+
+            .about-text h5 {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .about-text p {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .service {
+                padding: 50px 0;
+            }
+
+            .title h2 {
+                font-size: 45px;
+            }
+
+            .card {
+                height: auto;
+                width: 80%;
+                margin: 15px auto;
+                padding: 20px 15px;
+            }
+
+            h5 {
+                font-size: 18px;
+            }
+
+            .pra p {
+                font-size: 14px;
+            }
+
+            .contact-me .box .contact-info {
+                width: 70%;
+                height: auto;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .contact-me .box .contact-info h2 {
+                font-size: 35px;
+            }
+
+            .contact-me .box .contact-info h5 {
+                font-size: 16px;
+            }
+
+            .contact-me .box .contact-info .end {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <h2 class="logo">PORTFO<span>LIO</span></h2>
+            <a href="#" class="#"></a>
+        </nav>
+        <div class="content">
+            <h4>Hello, I'm</h4>
+            <h1>James<span>Quarshie</span></h1>
+            <h3>A PROGRAMMER</h3>
+            <div class="updates">
+                <form>
+                    <input type="email" name="email" id="mail" placeholder="Enter your email">
+                    <input type="submit" name="submit" value="Let's get started">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section class="about">
+        <div class="main">
+            <img src="jayMe2.png" height="500" width="250" alt="">
+            <div class="about-text">
+                <h2>
+                    About Me
+                </h2>
+                <h5>
+                    DEV & <span>DESIGN</span>
+                </h5>
+                <p>
+                   I'm a full stack web developer. I am able to use web animations to make websites more and more interactive. As a software developer, I can create any software of your choice. Also, with my cyber security skills, I can protect computer networks from cyberattacks and unauthorized access.
+                </p>
+                <button type="button">Let's Talk</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="service">
+        <div class="title">
+            <h2>My<span>Services</span></h2>
+        </div>
+
+        <div class="box">
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h5>Web Development</h5>
+                <div class="pra">
+                    <p>
+                        "Web design is not just about creating pretty layouts. It's about understanding the marketing challenge behind your business."
+                    </p>
+                    <p>
+                        <a href="#" class="button">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h5>Software Developer</h5>
+                <div class="pra">
+                    <p>
+                        "Experienced software developer with a passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success."
+                    </p>
+                    <p>
+                        <a href="#" class="button">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h5>Cyber Security</h5>
+                <div class="pra">
+                    <p>
+                        "The more devices to which we are connected, the more vulnerable we are. Think it's ridiculous that a vacuuming robot could spy on you, or a refrigerator could deny its owner entry? Think again."
+                    </p>
+                    <p>
+                        <a href="#" class="button">Read More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-me">
+        <div class="box">
+            <div class="contact-info">
+                <h2>Contact Me</h2>
+                <h5>Let's create something amazing together</h5>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="#" class="btn">Get in Touch</a>
+                <p class="end">CopyRight By James Quarshie</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
